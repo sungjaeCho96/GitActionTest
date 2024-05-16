@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cnt = 0
     while p.is_alive():
         print(f">>> Main : {cnt} MainMainMainMainMainMainMainMainMainMainMain")
-        print("포멧터를 테스트 해봅니다. 포멧터를 테스트 해봅니다. 포멧터를 테스트 해봅니다. 포멧터를 테스트 해봅니다.")
+        print("포멧터를 테스트 해봅니다. 포멧터를 테스트 해봅니다. 포멧터를 테스트 해봅니다. 포멧터를 테스트 해봅니다. 포멧터를 테스트 해봅니다.")
         time.sleep(5)
     p.join()
 # asyncio.run(coro)
