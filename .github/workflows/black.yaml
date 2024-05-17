@@ -21,7 +21,8 @@ jobs:
           python -m pip install black
           for file in ${ALL_CHANGED_FILES}; do
             echo "$file"
-            python -m black $file --check
+            python -m black $file
+          done
       - name: Check for modified files
         id: git-check
         run: echo "modified=$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
