@@ -14,18 +14,13 @@ jobs:
         uses: tj-actions/changed-files@v44
         # with:
         #   since_last_remote_commit: true
-      - name: List all changed files
+      - name: black
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          echo "Changed Files"
+          python -m pip install black
           for file in ${ALL_CHANGED_FILES}; do
-            echo "$file"
-          done
-      - name: black
-        uses: lgeiger/black-action@v1.0.1
-        with:
-          args: ${{ steps.changed-files.outputs.all_chaged_files }}
+            python -m black $file --check
       - name: Check for modified files
         id: git-check
         run: echo "modified=$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
