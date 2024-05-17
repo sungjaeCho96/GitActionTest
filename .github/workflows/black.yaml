@@ -22,5 +22,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git switch ${{ github.head_ref }}
           git commit -am "Automated changes"
           git push
