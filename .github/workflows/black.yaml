@@ -11,7 +11,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: black
-        uses: psf/black@stable
+        uses: lgeiger/black-action@v1.0.1
         with:
           args: .
       - name: Check for modified files
